@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { memo } from 'react'
 // import svg from "./assets/svg with paths.svg"
-const Home = () => {
+const Home = ({adjective , getAdjective}) => {
+  console.log("Home page ")
   return (
     <>
         <div>
-          Hello
+         <h1>{adjective}</h1>
+          <div>
+             <button onClick={()=>{getAdjective()}} > {getAdjective()} </button>
+          </div>
         </div>
     </>
   )
 }
 
-export default Home
+export default memo(Home) 
